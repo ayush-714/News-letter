@@ -4,7 +4,7 @@ const request=require("request");
 const https=require("https");
 // // app.use()
 const app=express();
-app.use(express.static("public"));
+app.use(express.static(__dirname+"/public"));
 app.use(body_.urlencoded({extended: true}));
 
 app.get("/",function(req,res){
@@ -30,7 +30,7 @@ app.post("/",function(req,res){
           FNAME: fir,
           LNAME: sec
         },}],
-        "update_existing": false,
+        // "update_existing": false,
   }
   const url="https://us7.api.mailchimp.com/3.0/lists/058513e869";
   const options={
